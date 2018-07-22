@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>eLibrary</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div style="text-align:center; margin:10px">
+    <a th:href="@{'/'}" class=" btn btn-primary btn-lg">Book List</a>
+    <a th:href="@{'addBook'}" class=" btn btn-primary btn-lg">Add Book</a>
+    <div class="container" style="text-align:center">
+        <h4>Book info:</h4>
+        <table class="table table-sm" style="text-align:center">
+            <tr>
+                <th>Title :</th>
+                <td th:text="${book.title}"/>
+            </tr>
+            <tr>
+                <th>Author :</th>
+                <td th:text="${book.author}"/>
+            </tr>
+            <tr>
+                <th>Year :</th>
+                <td th:text="${book.year}"/>
+            </tr>
+            <tr>
+                <th>Description :</th>
+                <td th:text="${book.description}"/>
+            </tr>
+        </table>
+        <a th:href="@{'download'(contentLink=${book.contentLink})}" class="btn btn-success">Download</a>
+    </div>
+</div>
+</body>
+</html>
